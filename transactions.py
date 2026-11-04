@@ -1,4 +1,26 @@
-def add_transaction(transactions, transaction_type, amount, category, description):
+def add_transaction(
+    transactions: list[dict],
+    transaction_type: str,
+    amount: float,
+    category: str,
+    description: str
+) -> list[dict]:
+    """
+    Adds a new transaction to the transaction list.
+
+    Args:
+        transactions: List of existing transactions.
+        transaction_type: Transaction type (income or expense).
+        amount: Transaction amount.
+        category: Transaction category.
+        description: Transaction description.
+
+    Returns:
+        Updated list of transactions.
+
+    Raises:
+        ValueError: If the transaction data is invalid.
+    """
     transaction_id = len(transactions) + 1
 
     if transaction_type not in ["income", "expense"]:
@@ -23,7 +45,16 @@ def add_transaction(transactions, transaction_type, amount, category, descriptio
     return transactions
 
 
-def show_transactions(transactions):
+def show_transactions(transactions: list[dict]) -> None:
+    """
+    Displays all transactions in a table format.
+
+    Args:
+        transactions: List of transactions to display.
+
+    Returns:
+        None.
+    """
     if not transactions:
         print("No transactions found.")
         return
@@ -35,7 +66,21 @@ def show_transactions(transactions):
         print(f"{transaction['id']} | {transaction['type']} | {transaction['amount']} | {transaction['category']} | {transaction['description']}")
 
 
-def delete_transaction(transactions, transaction_id):
+def delete_transaction(transactions: list[dict],
+    transaction_id: int
+) -> None:
+    """
+    Deletes a transaction by its ID.
+
+    Args:
+        transactions: List of transactions.
+        transaction_id: ID of the transaction to delete.
+
+    Returns:
+        None.
+
+    If the transaction is not found, displays an error message.
+    """
     for transaction in transactions:
         if transaction["id"] == transaction_id:
             transactions.remove(transaction)

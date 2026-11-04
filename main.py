@@ -15,7 +15,13 @@ from statistics import (
 transactions = []
 
 
-def show_menu():
+def show_menu() -> None:
+    """
+    Displays the main program menu.
+
+    Returns:
+        None.
+    """
     print("\n========== FINANCE MANAGER ==========")
     print("1. Add income")
     print("2. Add expense")
@@ -28,7 +34,16 @@ def show_menu():
     print("0. Exit")
 
 
-def main():
+def main() -> None:
+    """
+    Runs the main program loop.
+
+    Displays the menu and processes user choices until
+    the user selects the exit option.
+
+    Returns:
+        None.
+    """
     while True:
         show_menu()
 

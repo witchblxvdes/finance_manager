@@ -1,4 +1,13 @@
-def calculate_income(transactions):
+def calculate_income(transactions: list[dict]) -> float:
+    """
+    Calculates the total income.
+
+    Args:
+        transactions: List of transactions.
+
+    Returns:
+        Total amount of income.
+    """
     total = 0
     for transaction in transactions:
         if transaction["type"] == "income":
@@ -6,18 +15,48 @@ def calculate_income(transactions):
 
     return total
 
-def calculate_expenses(transactions):
+def calculate_expenses(transactions: list[dict]) -> float:
+    """
+    Calculates the total expenses.
+
+    Args:
+        transactions: List of transactions.
+
+    Returns:
+        Total amount of expenses.
+    """
     total_expenses = 0
     for transaction in transactions:
         if transaction["type"] == "expense":
             total_expenses += transaction["amount"]
     return total_expenses
 
-def calculate_balance(transactions):
+def calculate_balance(transactions: list[dict]) -> float:
+    """
+    Calculates the current balance.
+
+    Args:
+        transactions: List of transactions.
+
+    Returns:
+        Current balance (income minus expenses).
+    """
     balance = calculate_income(transactions) - calculate_expenses(transactions)
     return balance
 
-def filter_by_category(transactions, category):
+def filter_by_category(transactions: list[dict],
+    category: str
+) -> list[dict]:
+    """
+    Filters transactions by category.
+
+    Args:
+        transactions: List of transactions.
+        category: Category name to filter by.
+
+    Returns:
+        List of transactions matching the specified category.
+    """
     result = []
     for transaction in transactions:
         if transaction["category"] == category:
