@@ -54,7 +54,7 @@ finance_manager/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/USERNAME/finance_manager.git
+   git clone https://github.com/witchblxvdes/finance_manager.git
    ```
 
 2. Open the project directory:
