@@ -22,6 +22,7 @@ def add_transaction(transactions, transaction_type, amount, category, descriptio
 
     return transactions
 
+
 def show_transactions(transactions):
     if not transactions:
         print("No transactions found.")
@@ -32,3 +33,12 @@ def show_transactions(transactions):
 
     for transaction in transactions:
         print(f"{transaction['id']} | {transaction['type']} | {transaction['amount']} | {transaction['category']} | {transaction['description']}")
+
+
+def delete_transaction(transactions, transaction_id):
+    for transaction in transactions:
+        if transaction["id"] == transaction_id:
+            transactions.remove(transaction)
+            return
+
+    print("Transaction doesn't exist")
