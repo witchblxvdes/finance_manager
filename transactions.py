@@ -21,3 +21,14 @@ def add_transaction(transactions, transaction_type, amount, category, descriptio
     transactions.append(transaction)
 
     return transactions
+
+def show_transactions(transactions):
+    if not transactions:
+        print("No transactions found.")
+        return
+
+    print("ID | TYPE | AMOUNT | CATEGORY | DESCRIPTION")
+    print("------------------------------------------------")
+
+    for transaction in transactions:
+        print(f"{transaction['id']} | {transaction['type']} | {transaction['amount']} | {transaction['category']} | {transaction['description']}")
