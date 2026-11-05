@@ -148,3 +148,5 @@ Transaction deleted successfully.
 
 Transactions are stored in an in-memory Python list.
 All transaction data is lost when the application is closed.
+
+Temporary change for Git revert demonstration.
