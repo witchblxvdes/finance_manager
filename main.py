@@ -22,7 +22,7 @@ def show_menu() -> None:
     Returns:
         None.
     """
-    print("\n========== FINANCE MANAGER ==========")
+    print("\n========== PERSONAL FINANCE MANAGER ==========")
     print("1. Add income")
     print("2. Add expense")
     print("3. Show all transactions")
